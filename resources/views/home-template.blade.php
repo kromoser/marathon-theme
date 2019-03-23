@@ -5,8 +5,11 @@
 @extends('layouts.app')
 
 @section('content')
-  <h1>HOME TEMPLATE</h1>
 
+  @include('partials.hero-section')
+
+
+  <h2>Workouts Loop</h2>
    @php($workouts = HomeTemplate::getWorkouts())
 
   @while($workouts->have_posts())
