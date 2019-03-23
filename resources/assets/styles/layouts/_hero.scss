@@ -1,25 +1,60 @@
 .content {
   .hero-section {
-    h1 {
-      font-size: 7rem;
+    h1.hero-title {
+      font-size: 8rem;
+      line-height: .8;
       margin: 2rem 0 0;
+      color: $white;
+
+      background: linear-gradient(68deg, lighten($highlight, 20%), $highlight, lighten($highlight, 20%));
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: $sans;
+      //font-family: $display;
+      font-weight: 800;
+      margin-left: -.4rem;
+
+      // Color change animation
+      animation: col-change 20s ease infinite;
     }
 
-    h2 {
+    h2.hero-subtitle {
       margin: 0 0 2rem;
-      font-weight: lighter;
+      font-weight: 100;
+      color: $white;
+
     }
-    h3 {
+    h3.stat-highlight {
       margin: 0 0 .5rem;
-      font-size: 6rem;
-      font-weight: lighter;
+      font-size: 7rem;
+      font-family: $sans-wide, $sans;
+      letter-spacing: -.5rem;
+      font-weight: 100;
       line-height: 0.85;
+      color: $white;
+
+
+      .stat-secondary {
+        color: $medium-gray;
+        font-size: 5rem;
+        letter-spacing: -.2rem;
+      }
+
     }
     .stat-header {
-      margin: 2.5rem 0 0;
+      margin: 4vh 0 1vh;
       font-weight: bold;
       letter-spacing: .4rem;
       text-transform: uppercase;
+      color: $highlight;
     }
   }
+}
+
+
+@keyframes col-change {
+    0%{background-position:200% 50%}
+    100%{background-position:0% 50%}
+
 }

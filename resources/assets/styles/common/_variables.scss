@@ -1,6 +1,16 @@
 /** Colors */
-$primary:               #525ddc;
-$link:                  $primary;
+/*$primary:               #525ddc;*/
+$link:                  #c8b6f1;
+$highlight:             #f7d13b;
+$white:                 #ffffff;
+$medium-gray:           #7a7a7a;
 
 /** Box Model  */
 $spacer:                2rem;
+
+/** Font Stacks */
+@import url("https://use.typekit.net/qza1xbb.css");
+
+$display:               flood-std;
+$sans:                  pragmatica, 'Helvetica Neue', sans-serif;
+$sans-wide:             pragmatica-extended;
