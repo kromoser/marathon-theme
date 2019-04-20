@@ -10,13 +10,36 @@ class HomeTemplate extends Controller
   public static function getWorkouts() {
     $args = [
       'post_type' => 'workout',
-      'posts_per_page' => '-1'
+      'posts_per_page' => '10'
     ];
-
     $workouts = new WP_Query($args);
-
-
 
     return $workouts;
   }
+
+  public static function sumMiles() {
+    $all_workouts = self::getWorkouts();
+    //return $all_workouts;
+    $total_miles = 0;
+    while ( $all_workouts->have_posts() ) {
+      $all_workouts->the_post();
+      $total_miles += get_post_meta(get_the_ID(), "total_workout_miles", true);
+    };
+    return $total_miles;
+    //return '3';
+    //return (string)$workouts;
+  }
+
+  public static function getPosts() {
+    $args = [
+      'post_type' => 'post',
+      'posts_per_page' => 10
+    ];
+
+    $posts = new WP_Query($args);
+
+    return $posts;
+  }
+
+
 }

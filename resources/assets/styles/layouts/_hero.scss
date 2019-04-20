@@ -1,5 +1,8 @@
 .content {
   .hero-section {
+
+    // padding: 0 0 4rem 0;
+
     h1.hero-title {
       font-size: 8rem;
       line-height: .8;
@@ -19,7 +22,8 @@
       animation: col-change 20s ease infinite;
     }
 
-    h2.hero-subtitle {
+    p.hero-subtitle {
+      font-size: 2rem;
       margin: 0 0 2rem;
       font-weight: 100;
       color: $white;
