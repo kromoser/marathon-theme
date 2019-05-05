@@ -1,5 +1,5 @@
 <time class="updated" datetime="{{ get_post_time('c', true) }}">{{ get_the_date() }}</time>
-{!! App::firstCategory() !!}
+
 {{--
 HIDE AUTHOR
 <p class="byline author vcard">

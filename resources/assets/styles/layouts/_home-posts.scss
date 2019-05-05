@@ -1,0 +1,42 @@
+.home-posts--post {
+  padding: 2rem 0;
+  border-bottom: 2px solid $medium-gray;
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+
+  h2.entry-title {
+
+      margin-top: .25rem;
+
+      a{
+      color: $pearl;
+      font-weight: 300;
+      font-size: 2.4rem;
+      margin:0 0 .75rem;
+
+        &:hover {
+          color: darken($pearl, 20%);
+        }
+      }
+  }
+
+  .entry-content {
+    color: $light-gray;
+  }
+
+  time {
+    font-weight: bold;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    color: $highlight;
+    font-size: 0.8rem;
+  }
+
+}
