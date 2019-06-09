@@ -1,3 +1,56 @@
-.banner .nav li {
-  @extend .navbar-item;
+.banner {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  nav {
+
+    width: 100%;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background: rgba($dark-gray,0.8);
+      transition: background-color 0.2s;
+    }
+
+    ul {
+      display: flex;
+      height: 100%;
+      padding: 0rem 5% .75rem;
+    }
+
+    li {
+      font-size: .9rem;
+      text-transform: uppercase;
+      padding: .75rem 0 0 2rem;
+      letter-spacing: 0.15rem;
+
+      &:first-child {
+        margin-left: auto;
+      }
+
+      a {
+        color: $light-gray;
+
+        &:hover {
+          color: $highlight;
+        }
+      }
+
+      &:last-child a {
+        color: $dark-gray;
+        padding: .25rem .5rem;
+        background: $highlight;
+        font-weight: 400;
+        border-radius: 3px;
+
+        &:hover {
+          background: darken($highlight, 10%);
+          color: $dark-gray;
+        }
+      }
+    }
+  }
+
 }

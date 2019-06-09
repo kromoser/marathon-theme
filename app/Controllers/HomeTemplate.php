@@ -7,6 +7,12 @@ use WP_Query;
 
 class HomeTemplate extends Controller
 {
+
+  public static function getTotalDonations($id) {
+    $total_donations = get_post_meta($id,'total_donations',TRUE);
+    return $total_donations;
+  }
+
   public static function getWorkouts() {
     $args = [
       'post_type' => 'workout',
@@ -40,6 +46,7 @@ class HomeTemplate extends Controller
 
     return $posts;
   }
+
 
 
 }

@@ -29,7 +29,7 @@
 
          @while($workouts->have_posts())
            @php($workouts->the_post())
-           @include('partials.content-single-'.get_post_type())
+           @include('partials.home-single-'.get_post_type())
          @endwhile
       </div>
     </div>

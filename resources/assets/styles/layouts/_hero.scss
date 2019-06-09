@@ -1,14 +1,15 @@
 .content {
   .hero-section {
-
+    height: calc( 100vh + 14px );
+    min-height: 720px;
     // padding: 0 0 4rem 0;
 
     h1.hero-title {
-      font-size: 8rem;
+      font-size: 7.5rem;
       line-height: .8;
       margin: 2rem 0 0;
       color: $white;
-
+      white-space: nowrap;
       background: linear-gradient(68deg, lighten($highlight, 20%), $highlight, lighten($highlight, 20%));
       background-size: 200% 100%;
       -webkit-background-clip: text;
@@ -58,6 +59,7 @@
     // MAP SVG SECTION
     .progress-line-container, .progress-line-container svg {
       height: 100vh;
+      min-height: 706px;
       overflow: visible;
 
     }
@@ -71,17 +73,19 @@
       animation: draw-line 3s ease-in-out forwards;
       fill:none;
       stroke:#FDC03B;
-      stroke-width:12;
+      stroke-width:16;
       stroke-linejoin:round;
       stroke-miterlimit:10;
+      stroke-linecap:round;
     }
 
     .route-line {
       fill:none;
       stroke:#5b5b5b;
-      stroke-width:7;
+      stroke-width:8;
       stroke-linejoin:round;
       stroke-miterlimit:10;
+      stroke-linecap:round;
       position: absolute;
 
     }
@@ -96,7 +100,7 @@
       left: 30px;
     }
 
-    
+
   }
 }
 
