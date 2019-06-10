@@ -1,7 +1,8 @@
-<article @php post_class() @endphp>
-  <header>
+<article @php post_class('container is-8') @endphp>
+  <header class="post-header">
+    @include('partials/entry-meta-single')
     <h1 class="entry-title">{!! get_the_title() !!}</h1>
-    @include('partials/entry-meta')
+    <h3 class="single-excerpt">{!! get_the_excerpt() !!}</h3>
   </header>
   <div class="entry-content">
     @php the_content() @endphp
@@ -9,5 +10,5 @@
   <footer>
     {!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}
   </footer>
-  
+
 </article>
