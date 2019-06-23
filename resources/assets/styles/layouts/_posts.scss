@@ -50,5 +50,34 @@
       font-size: 1.25rem;
       line-height: 2.2rem;
     }
+
+    .donate-cta {
+      float: right;
+      margin: 2rem -6rem 2rem 3rem;
+      padding: .5rem;
+      text-align: center;
+      color: $light-gray;
+      border-top: 3px solid $highlight;
+      font-size: 1.25rem;
+
+      @media screen and (max-width: $tablet) {
+        margin: 2rem auto;
+        border-top: none;
+        border-radius: 3px;
+        border: 2px solid $pearl;
+        padding: 2rem;       
+      }
+
+      .donate-button {
+        display: block;
+        width: 65%;
+        color: $dark-gray;
+        margin: 1rem auto 0;
+        padding: .25rem .5rem;
+        border-radius: 3px;
+        background: $highlight;
+      }
+
+    }
   }
 }
