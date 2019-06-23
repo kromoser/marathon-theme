@@ -16,7 +16,8 @@ class Workout {
       'public'  => true,
       'show_ui' => true,
       'publicly_queryable' => true,
-      //'rewrite' => array('slug' => 'workouts'),
+      'rewrite' => array('slug' => 'workouts'),
+      'has_archive' => true,
       'hierarchical'  => true,
       'show_in_rest'  => true,
       'supports'  => [

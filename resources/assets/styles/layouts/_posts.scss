@@ -6,7 +6,7 @@
 
   .featured-image-container {
     height: 80vh;
-    margin-bottom: -22vh;
+    margin-bottom: -25vh;
   }
 
   .post-header {
@@ -35,9 +35,20 @@
     font-size: 2rem;
     font-weight: 300;
     width: fit-content;
-    padding: 0 .75rem 0 .5rem;
+    padding: 0 .75rem 2rem .5rem;
     margin: 0;
     background: #363636d6;
 
+  }
+
+  .entry-content {
+    background: #363636d6;
+    padding: 0 .75rem 0.5rem 0.5rem;
+
+    p {
+      margin: 0 0 1rem 0;
+      font-size: 1.25rem;
+      line-height: 2.2rem;
+    }
   }
 }

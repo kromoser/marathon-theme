@@ -89,3 +89,16 @@ add_filter('comments_template', function ($comments_template) {
 
     return $comments_template;
 }, 100);
+
+
+/*
+ * Insert donation button into post
+ *
+ */
+ add_filter('the_content', function ( $content ) {
+   $donation_button_code = '<div class="donate-button">Donate to the cause</div>';
+   if ( is_single() && !is_admin()) {
+     return insert_button_code($donation_button_code, 2, $content);
+   }
+   return $content;
+});

@@ -136,3 +136,22 @@ function display_sidebar()
     isset($display) || $display = apply_filters('sage/display_sidebar', false);
     return $display;
 }
+
+/**
+ *
+ * Add donation button in the middle of posts
+ *
+ */
+ function insert_button_code($insertion_code, $paragraph_number, $content) {
+   $closing_p_tag = '</p>';
+   $all_paragraphs = explode($closing_p_tag, $content);
+   foreach ($all_paragraphs as $index => $paragraph) {
+     if (trim($paragraph)) {
+       $all_paragraphs[$index] .= $closing_p_tag;
+     }
+     if ( $paragraph_number == $index + 1 ) {
+       $all_paragraphs[$index] .= $insertion_code;
+     }
+   }
+   return implode( '', $all_paragraphs );
+ }
