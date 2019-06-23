@@ -9,7 +9,7 @@
     ]
   },
   "publicPath": "/app/themes/marathon",
-  "devUrl": "http://example.test",
+  "devUrl": "http://localhost:3000",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [
