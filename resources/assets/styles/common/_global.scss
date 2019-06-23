@@ -5,3 +5,13 @@
 body {
   min-height: 100vh;
 }
+
+a:hover {
+  color: darken($highlight, 10%);
+}
+
+h3.single-excerpt {
+  color: $light-gray;
+  font-size: 2rem;
+  font-weight: 300;
+}

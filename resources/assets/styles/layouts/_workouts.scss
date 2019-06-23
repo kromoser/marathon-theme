@@ -6,7 +6,7 @@
 
   margin: 0 1rem 1rem
 }
-.home-posts--workout {
+.home-posts--workout, .workouts--workout {
 
     border: 1px solid $medium-gray;
     border-radius: 2px;
@@ -27,15 +27,13 @@
 
     h2.entry-title {
       margin-top: 0rem;
-
-
-      color: $medium-gray;
+      color: $light-gray;
       font-weight: 300;
       font-size: 1.5rem;
       margin:0 0 .75rem;
-
-
     }
+
+
 
     time {
       letter-spacing: .125rem;
@@ -43,4 +41,32 @@
       color: $pearl;
       font-size: 0.75rem;
     }
+}
+
+.workouts {
+  display: flex;
+  .workouts--workout {
+
+    flex: 1;
+
+    h2.entry-title {
+      font-weight: 400;
+      color: $highlight;
+    }
+
+    .workouts--content p {
+      font-size: 1rem;
+      font-weight: 300;
+      margin-bottom: 0;
+      color: $light-gray;
+    }
+
+    .post-meta {
+      margin-top: 0;
+    }
+
+    img {
+      width: 60px;
+    }
+  }
 }
