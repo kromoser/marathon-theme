@@ -6,13 +6,15 @@
     @include('partials.header')
     <div class="wrap" role="document">
       <div class="content">
-        <main class="main columns">
-          <div class="column columns workouts-archive is-6 is-offset-1">
-            @yield('content')
+        <main class="main columns is-reverse-mobile">
+          <div class="column is-6-desktop is-7-tablet is-offset-1-tablet">
+            <div class="columns is-mobile is-multiline workouts-archive is-mobile">
+              @yield('content')
+            </div>
           </div>
-          <div class="column category-title is-4">
+          <div class="column category-title is-5-desktop is-4-tablet">
             {{-- This returns the label if the page is displaying a CPT or pluralizing the category name if a category page --}}
-            <h1>@php echo get_queried_object()->label ? get_queried_object()-> label : App\Inflect::pluralize( get_queried_object()->name )@endphp</h1>
+            <h1 class="has-text-centered-mobile">@php echo get_queried_object()->label ? get_queried_object()-> label : App\Inflect::pluralize( get_queried_object()->name )@endphp</h1>
           </div>
         </main>
 

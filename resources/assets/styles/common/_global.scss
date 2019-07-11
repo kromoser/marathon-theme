@@ -15,3 +15,14 @@ h3.single-excerpt {
   font-size: 2rem;
   font-weight: 300;
 }
+
+
+// Utility Classes
+
+.is-reverse-mobile {
+ @media (max-width: $tablet) {
+   flex-direction: column-reverse;
+   display: flex;
+ }
+
+}

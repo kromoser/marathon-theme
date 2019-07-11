@@ -4,20 +4,31 @@
   width: 100%;
   z-index: 1;
 
-  nav {
-
+  nav.navbar {
+    background: none;
     width: 100%;
     transition: background-color 0.2s;
+
+    @media (max-width: $tablet) {
+      background: rgba($dark-gray,0.8);
+    }
 
     &:hover {
       background: rgba($dark-gray,0.8);
       transition: background-color 0.2s;
     }
 
+    .navbar-menu {
+      background: none;
+    }
+
     ul {
       display: flex;
       height: 100%;
       padding: 0rem 5% .75rem;
+      @media (max-width: $tablet) {
+        flex-direction: column;
+      }
     }
 
     li {
@@ -28,10 +39,18 @@
 
       &:first-child {
         margin-left: auto;
+
+        @media (max-width: $tablet) {
+          margin-left: 0;
+        }
       }
 
       a {
         color: $light-gray;
+
+        @media (max-width: $tablet) {
+          width: 100%;
+        }
 
         &:hover {
           color: $highlight;
@@ -50,6 +69,10 @@
           color: $dark-gray;
         }
       }
+    }
+
+    .navbar-burger {
+      color: $highlight;
     }
   }
 

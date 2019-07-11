@@ -2,7 +2,12 @@
   .hero-section {
     height: calc( 100vh + 14px );
     min-height: 720px;
+    word-break: break-word;
     // padding: 0 0 4rem 0;
+
+    @media (max-width: $tablet) {
+      height: auto;
+    }
 
     h1.hero-title {
       font-size: 7.5rem;
@@ -21,6 +26,15 @@
 
       // Color change animation
       animation: col-change 20s ease infinite;
+
+      @media (max-width: $desktop) {
+        white-space: normal;
+      }
+
+      @media (max-width: $tablet) {
+        font-size: 4rem;
+        white-space: normal;
+      }
     }
 
     p.hero-subtitle {
@@ -61,6 +75,10 @@
       height: 100vh;
       min-height: 706px;
       overflow: visible;
+
+      @media (max-width: $tablet) {
+        overflow-x: hidden;
+      }
 
     }
 

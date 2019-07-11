@@ -1,4 +1,4 @@
-<div class="column is-4 workouts">
+<div class="column is-4-desktop is-6-tablet is-6-mobile workouts">
   <article @php post_class('workouts--workout') @endphp>
     <header class="post-header">
       @include('partials/entry-meta-single')
