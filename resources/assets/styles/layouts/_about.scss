@@ -1,11 +1,40 @@
-h2 {
-  color: $white;
-}
+
 
 .about-section {
-  padding: 6rem 0;
-  background: url(./resources/assets/images/kevin-on-the-track.jpg);
+  padding: 1rem 0;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0)
+    ),
+    url(./resources/assets/images/kr-running.jpg);
   background-size: cover;
   background-position: center center;
-  margin: 0 0 4rem;
+  margin: 0;
+  background-repeat: no-repeat;
+
+  @media (max-width: $tablet) {
+
+    background: linear-gradient(
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+      ),
+      url(./resources/assets/images/kr-running.jpg);
+    background-position: right center;
+    background-repeat: no-repeat;
+
+  }
+
+  a {
+    color: $highlight;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  h2 {
+    color: $white;
+    font-size: 3rem;
+    text-decoration: underline;
+    text-decoration-color: $highlight;
+  }
 }

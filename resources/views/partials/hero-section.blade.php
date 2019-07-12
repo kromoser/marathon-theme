@@ -1,8 +1,8 @@
 @php($progress = HomeTemplate::getTotalDonations(get_the_ID()))
 
-<section class="hero-section container">
+<section class="hero-section section container">
   <div class="columns">
-    <div class="column is-7">
+    <div class="column hero-section-stats is-7-desktop is-6-tablet">
       <h1 class="hero-title">Miles to&nbsp;Go</h1>
       <p class="hero-subtitle">Running the 2019 NYC Marathon to raise money for Housing Works</p>
       <p class="stat-header">The Race</p>
@@ -16,7 +16,7 @@
 
     </div>
 
-    <div class="column is-5">
+    <div class="column is-5-desktop is-6-tablet">
       <div class="progress-line-container">
         @php($progress = 3250 - $progress)
 

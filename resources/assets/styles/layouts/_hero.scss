@@ -1,9 +1,15 @@
 .content {
   .hero-section {
-    height: calc( 100vh + 14px );
-    min-height: 720px;
+    min-height: calc( 100vh + 14px );
+    //min-height: 720px;
     word-break: break-word;
+    padding-top: 0;
+    padding-bottom: 0;
     // padding: 0 0 4rem 0;
+    @media (min-width: $desktop) {
+      padding-left: 0;
+      padding-right: 0;
+    }
 
     @media (max-width: $tablet) {
       height: auto;
@@ -11,7 +17,7 @@
 
     h1.hero-title {
       font-size: 7.5rem;
-      line-height: .8;
+      line-height: 1;
       margin: 2rem 0 0;
       color: $white;
       white-space: nowrap;
@@ -27,7 +33,8 @@
       // Color change animation
       animation: col-change 20s ease infinite;
 
-      @media (max-width: $desktop) {
+      @media (max-width: $widescreen) {
+        font-size: 6rem;
         white-space: normal;
       }
 
@@ -73,11 +80,19 @@
     // MAP SVG SECTION
     .progress-line-container, .progress-line-container svg {
       height: 100vh;
-      min-height: 706px;
+      min-height: 100%;
       overflow: visible;
 
       @media (max-width: $tablet) {
         overflow-x: hidden;
+      }
+
+      @media (max-width: $mobile) {
+        min-height: 100vh;
+        padding: 0;
+        margin: 0 auto;
+        text-align: center;
+        overflow: hidden;
       }
 
     }
@@ -118,6 +133,9 @@
       left: 30px;
     }
 
+    .hero-section-stats {
+      padding-bottom: 2rem;
+    }
 
   }
 }
