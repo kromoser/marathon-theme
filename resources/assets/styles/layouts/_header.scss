@@ -4,6 +4,31 @@
   width: 100%;
   z-index: 1;
 
+  .navbar-brand {
+    margin-left: 5%;
+    justify-content: center;
+    transition: all .2s;
+
+    .navbar-brand--name {
+      display: none;
+      color: $highlight;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding-top: .75rem;
+    }
+
+  }
+
+  &:hover {
+    background: rgba($dark-gray,0.8);
+    transition: all 0.2s;
+
+    .navbar-brand--name {
+      display: block;
+      transition: all 0.2s;
+    }
+  }
+
   nav.navbar {
     background: none;
     width: 100%;
@@ -13,10 +38,7 @@
       background: rgba($dark-gray,0.8);
     }
 
-    &:hover {
-      background: rgba($dark-gray,0.8);
-      transition: background-color 0.2s;
-    }
+
 
     .navbar-menu {
       background: none;
@@ -74,6 +96,8 @@
     .navbar-burger {
       color: $highlight;
     }
+
+
   }
 
 }

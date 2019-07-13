@@ -1,8 +1,9 @@
 <header class="banner">
-  <div class="">
     <!--<a class="brand" href="{{ home_url('/') }}">{{ get_bloginfo('name', 'display') }}</a>-->
     <nav class="navbar">
       <div class="navbar-brand">
+        <a class="navbar-brand--name" href="{{ home_url('/') }}">{{ get_bloginfo('name', 'display') }}</a>
+
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -15,5 +16,4 @@
 
 
     </nav>
-  </div>
 </header>

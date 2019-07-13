@@ -96,7 +96,7 @@ add_filter('comments_template', function ($comments_template) {
  *
  */
  add_filter('the_content', function ( $content ) {
-   $donation_button_code = '<div class="donate-cta column is-5 is-12-mobile">Help me reach my goal and <br>support Housing Works <a href="#" class="donate-button is-6">Donate</a></div>';
+   $donation_button_code = '<div class="donate-cta column is-5 is-12-mobile">Help me reach my goal and <br>support Housing Works <a href="https://www.crowdrise.com/o/en/campaign/housing-works-nyc-2019/kevinromoser" class="donate-button is-6">Donate</a></div>';
    if ( is_single() && !is_admin() && is_singular( 'post' )) {
      return insert_button_code($donation_button_code, 1, $content);
    }
