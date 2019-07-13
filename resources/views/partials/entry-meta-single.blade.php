@@ -1,5 +1,9 @@
-<div class="post-meta"><time class="updated" datetime="{{ get_post_time('c', true) }}">{{ get_the_date() }}</time>
-{!! App::firstCategory() !!}</div>
+<div class="post-meta">
+  <time class="updated" datetime="{{ get_post_time('c', true) }}">{{ get_the_date('m.d.y') }}</time>
+  {!! App::firstCategory() !!}
+  <span class="mileage">{!! get_post_meta(get_the_ID(), "total_workout_miles", true) ? " • ".get_post_meta(get_the_ID(), "total_workout_miles", true)." miles" : ""!!}</span>
+
+</div>
 {{--
 HIDE AUTHOR
 <p class="byline author vcard">

@@ -35,7 +35,7 @@
 
 
 
-    time {
+    time, .mileage {
       letter-spacing: .125rem;
       text-transform: uppercase;
       color: $pearl;
@@ -46,7 +46,8 @@
 .workouts {
   display: flex;
   .workouts--workout {
-
+    display: flex;
+    flex-flow: column;
     flex: 1;
 
     h2.entry-title {
@@ -65,9 +66,15 @@
       margin-top: 0;
     }
 
-    img {
-      width: 60px;
+    a.strava-link {
+      margin-top: auto;
+
+      img {
+        width: 60px;
+      }
     }
+
+
   }
 }
 
@@ -76,5 +83,8 @@
   font-size: 5rem;
   margin: 1rem 0;
 
+}
 
+header.workout {
+  padding-top: 3rem;
 }

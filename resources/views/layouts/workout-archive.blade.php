@@ -6,9 +6,9 @@
     @include('partials.header')
     <div class="wrap" role="document">
       <div class="content">
-        <main class="main columns is-reverse-mobile">
+        <main class="main section columns is-reverse-mobile">
           <div class="column is-6-desktop is-7-tablet is-offset-1-tablet">
-            <div class="columns is-mobile is-multiline workouts-archive is-mobile">
+            <div class="columns is-multiline workouts-archive is-mobile">
               @yield('content')
             </div>
           </div>
