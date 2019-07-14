@@ -13,10 +13,10 @@ class HomeTemplate extends Controller
     return $total_donations;
   }
 
-  public static function getWorkouts() {
+  public static function getWorkouts($amount) {
     $args = [
       'post_type' => 'workout',
-      'posts_per_page' => '10'
+      'posts_per_page' => $amount
     ];
     $workouts = new WP_Query($args);
 
@@ -24,7 +24,7 @@ class HomeTemplate extends Controller
   }
 
   public static function sumMiles() {
-    $all_workouts = self::getWorkouts();
+    $all_workouts = self::getWorkouts(-1);
     //return $all_workouts;
     $total_miles = 0;
     while ( $all_workouts->have_posts() ) {

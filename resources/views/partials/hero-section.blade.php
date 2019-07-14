@@ -24,20 +24,69 @@
 
         <script type="text/javascript">
           document.addEventListener('DOMContentLoaded', function() {
+
             const progressPath = document.querySelector('.progress-line');
             const progressPathLength = progressPath.getTotalLength();
-            const progressVal = parseInt(document.querySelector('#progress-total').textContent);
+            const progressVal = parseInt({{$progress}});
+            const totalDonations = progressPathLength - progressVal;
+
             console.log(progressPathLength);
             console.log({{$progress}})
 
           //  progressPath.style.strokeDasharray = (progressVal/2500)*progressPathLength;
           //  progressPath.style.strokeDashOffset = (progressVal/2500)*progressPathLength;
+
+          // Draw SVG label
+          const progPoint = progressPath.getPointAtLength(progressPath.getTotalLength()-progressVal);
+          const svgGroup = document.createElementNS("http://www.w3.org/2000/svg", 'g');
+          const textLabel = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
+          const textNode = document.createElementNS("http://www.w3.org/2000/svg", 'text');
+          const polygon = document.createElementNS("http://www.w3.org/2000/svg", 'polygon');
+
+          const svg = document.getElementById('progress-map')
+
+
+          polygon.setAttribute('style', 'fill: rgb(0,0,0); stroke-width: 4px; stroke: #595758');
+          polygon.setAttribute('points',`${progPoint.x+30},${progPoint.y} ${progPoint.x+70},${progPoint.y-50} ${progPoint.x+660},${progPoint.y-50} ${progPoint.x+660},${progPoint.y+50} ${progPoint.x+70}, ${progPoint.y+50}`);
+
+          textNode.setAttribute('x',progPoint.x + 90);
+          textNode.setAttribute('y',progPoint.y + 15);
+          textNode.setAttribute('style', 'fill: #f7d13b; font-size: 3rem; font-weight: bold; letter-spacing: .1rem')
+
+          textNode.textContent = `$${totalDonations.toFixed()}/$2,500`;
+
+          svgGroup.classList = 'fade-out';
+
+          progressPath.addEventListener('animationend', function() {
+            svgGroup.appendChild(polygon);
+            svgGroup.appendChild(textNode)
+            svg.appendChild(svgGroup);
+            svgGroup.classList = 'fade-out'
+            svgGroup.classList = 'fade-in';
+
+          }, false);
+
+          console.log(progPoint.x)
+          console.log(progPoint.y)
           })
         </script>
-        <svg version="1.1" id="Layer_7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        <svg version="1.1" id="progress-map" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   	 viewBox="0 0 2712.99 3029.27" style="enable-background:new 0 0 2712.99 3029.27;" xml:space="preserve">
   <style type="text/css">
 
+  .fade-in {
+    opacity: 1;
+    transition: all .3s;
+  }
+
+  .fade-out {
+    opacity: 0;
+    transition: all .3s;
+  }
+
+  g {
+    transition: all .3s;
+  }
 
   @keyframes draw-line {
     from {
