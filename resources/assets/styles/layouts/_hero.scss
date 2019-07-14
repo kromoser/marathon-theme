@@ -60,11 +60,15 @@
       line-height: 0.85;
       color: $white;
 
+      span {
+        font-family: $sans-wide, $sans;
+      }
 
       .stat-secondary {
         color: $medium-gray;
         font-size: 5rem;
         letter-spacing: -.2rem;
+        font-family: $sans;
       }
 
     }
@@ -100,17 +104,7 @@
     .map-bg{fill:#222222;}
 	.route-path{fill:none;stroke:#444444;stroke-width:8;stroke-linejoin:round;stroke-miterlimit:10;}
 
-    .progress-line{
-      stroke-dasharray: 3250;
-      stroke-dashoffset: 3250;
-      animation: draw-line 3s ease-in-out forwards;
-      fill:none;
-      stroke:#FDC03B;
-      stroke-width:16;
-      stroke-linejoin:round;
-      stroke-miterlimit:10;
-      stroke-linecap:round;
-    }
+    
 
     .route-line {
       fill:none;

@@ -31,6 +31,7 @@ class HomeTemplate extends Controller
       $all_workouts->the_post();
       $total_miles += get_post_meta(get_the_ID(), "total_workout_miles", true);
     };
+    $total_miles = round($total_miles);
     return $total_miles;
     //return '3';
     //return (string)$workouts;

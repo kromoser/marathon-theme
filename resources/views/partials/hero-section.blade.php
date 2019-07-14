@@ -10,7 +10,7 @@
       <p class="stat-header">The Goal</p>
       <h3 class="stat-highlight">$<span id="progress-total">{{$progress}}</span><span class="stat-secondary">/$2,500</span></h3>
       <p class="stat-header">The Training</p>
-      <h3 class="stat-highlight"><span id="total-miles-logged">{!! HomeTemplate::sumMiles() !!}</span> <span class="stat-secondary">miles logged</span></h3>
+      <h3 class="stat-highlight"><span id="total-miles-logged">{!! HomeTemplate::sumMiles() !!}</span> <span class="stat-secondary">miles run</span></h3>
 
 
 
@@ -18,7 +18,8 @@
 
     <div class="column is-5-desktop is-6-tablet">
       <div class="progress-line-container">
-        @php($progress = 3250 - $progress)
+        @php($progressAdjusted = 3250 - 3250 * ( $progress / 2500 ))
+        @php($progress_for_timing = $progress/2500 * 4 + 1)
 
 
 
@@ -27,7 +28,8 @@
 
             const progressPath = document.querySelector('.progress-line');
             const progressPathLength = progressPath.getTotalLength();
-            const progressVal = parseInt({{$progress}});
+            const progressVal = parseInt({{$progressAdjusted}});
+            const progress = parseInt({{$progress}});
             const totalDonations = progressPathLength - progressVal;
 
             console.log(progressPathLength);
@@ -47,13 +49,13 @@
 
 
           polygon.setAttribute('style', 'fill: rgb(0,0,0); stroke-width: 4px; stroke: #595758');
-          polygon.setAttribute('points',`${progPoint.x+30},${progPoint.y} ${progPoint.x+70},${progPoint.y-50} ${progPoint.x+660},${progPoint.y-50} ${progPoint.x+660},${progPoint.y+50} ${progPoint.x+70}, ${progPoint.y+50}`);
+          polygon.setAttribute('points',`${progPoint.x+30},${progPoint.y} ${progPoint.x+70},${progPoint.y-50} ${progPoint.x+700},${progPoint.y-50} ${progPoint.x+700},${progPoint.y+50} ${progPoint.x+70}, ${progPoint.y+50}`);
 
           textNode.setAttribute('x',progPoint.x + 90);
           textNode.setAttribute('y',progPoint.y + 15);
-          textNode.setAttribute('style', 'fill: #f7d13b; font-size: 3rem; font-weight: bold; letter-spacing: .1rem')
+          textNode.setAttribute('style', 'fill: #f7d13b; font-size: 3rem; font-weight: bold; letter-spacing: .1rem; text-transform: uppercase;')
 
-          textNode.textContent = `$${totalDonations.toFixed()}/$2,500`;
+          textNode.textContent = `$${progress.toFixed()}/$2,500 raised`;
 
           svgGroup.classList.add('fade-out')
           svgGroup.appendChild(polygon);
@@ -92,8 +94,22 @@
       stroke-dashoffset: 3250 ;
     }
     to {
-      stroke-dashoffset: {{$progress}};
+      stroke-dashoffset: {{$progressAdjusted}} ;
     }
+  }
+
+
+
+  .progress-line{
+    stroke-dasharray: 3250;
+    stroke-dashoffset: 3250;
+    animation: draw-line {{$progress_for_timing}}s ease-in-out forwards;
+    fill:none;
+    stroke:#FDC03B;
+    stroke-width:16;
+    stroke-linejoin:round;
+    stroke-miterlimit:10;
+    stroke-linecap:round;
   }
   </style>
   {{-- These paths are the background map outline --}}
