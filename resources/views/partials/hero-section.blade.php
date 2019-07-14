@@ -55,16 +55,17 @@
 
           textNode.textContent = `$${totalDonations.toFixed()}/$2,500`;
 
-          svgGroup.classList = 'fade-out';
+          svgGroup.classList.add('fade-out')
+          svgGroup.appendChild(polygon);
+          svgGroup.appendChild(textNode)
+          svg.appendChild(svgGroup);
 
           progressPath.addEventListener('animationend', function() {
-            svgGroup.appendChild(polygon);
-            svgGroup.appendChild(textNode)
-            svg.appendChild(svgGroup);
-            svgGroup.classList = 'fade-out'
-            svgGroup.classList = 'fade-in';
-
+            svgGroup.classList.toggle('fade-out')
           }, false);
+
+
+
 
           console.log(progPoint.x)
           console.log(progPoint.y)
@@ -74,18 +75,16 @@
   	 viewBox="0 0 2712.99 3029.27" style="enable-background:new 0 0 2712.99 3029.27;" xml:space="preserve">
   <style type="text/css">
 
-  .fade-in {
-    opacity: 1;
-    transition: all .3s;
-  }
 
   .fade-out {
     opacity: 0;
-    transition: all .3s;
+    transition: all 1.3s;
   }
 
   g {
-    transition: all .3s;
+    opacity: 1;
+    display: block;
+    transition: all .6s;
   }
 
   @keyframes draw-line {
