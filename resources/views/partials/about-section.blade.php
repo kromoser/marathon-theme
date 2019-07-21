@@ -1,3 +1,34 @@
+<style media="screen">
+  .about-section {
+    background: linear-gradient(
+      to right,
+      rgba(0,0,0,0.2),
+      rgba(0,0,0,0)
+      ),
+      url(@asset('images/kr-running.jpg'));
+    padding: 1rem 0;
+
+    background-size: cover;
+    background-position: center center;
+    margin: 0;
+    background-repeat: no-repeat;
+
+  }
+
+  @media (max-width: 1024px ) {
+    .about-section {
+      background: linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        ),
+        url(@asset('images/kr-running.jpg'));
+      background-position: right center;
+      background-repeat: no-repeat;
+
+    }
+
+  }
+</style>
 <section class="about-section">
   <div class="container section">
     <div class="columns">

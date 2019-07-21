@@ -1,27 +1,8 @@
 
 
 .about-section {
-  padding: 1rem 0;
-  background: linear-gradient(
-    to right,
-    rgba(0,0,0,0.2),
-    rgba(0,0,0,0)
-    ),
-    url(../images/kr-running.jpg);
-  background-size: cover;
-  background-position: center center;
-  margin: 0;
-  background-repeat: no-repeat;
 
   @media (max-width: $tablet) {
-
-    background: linear-gradient(
-      rgba(0,0,0,0.5),
-      rgba(0,0,0,0.5)
-      ),
-      url(../images/kr-running.jpg);
-    background-position: right center;
-    background-repeat: no-repeat;
 
   }
 
