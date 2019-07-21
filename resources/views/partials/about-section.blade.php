@@ -24,6 +24,7 @@
         url(@asset('images/kr-running.jpg'));
       background-position: right center;
       background-repeat: no-repeat;
+      background-size: cover;
 
     }
 

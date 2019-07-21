@@ -12,9 +12,11 @@
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
-}
-
-.category-title h1 {
   position: sticky;
   top: 5rem;
+
+  @media (max-width: $mobile) {
+    font-size: 3rem;
+    margin-top: 8vh;
+  }
 }

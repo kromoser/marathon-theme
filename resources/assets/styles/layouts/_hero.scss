@@ -60,6 +60,10 @@
       line-height: 0.85;
       color: $white;
 
+      @media (max-width: $tablet) {
+        font-size: 5rem;
+      }
+
       span {
         font-family: $sans-wide, $sans;
       }
@@ -69,6 +73,10 @@
         font-size: 5rem;
         letter-spacing: -.2rem;
         font-family: $sans;
+
+        @media (max-width: $tablet) {
+          font-size: 2.5rem;
+        }
       }
 
     }
@@ -87,6 +95,7 @@
       min-height: 100%;
       overflow: visible;
 
+
       @media (max-width: $tablet) {
         overflow-x: hidden;
       }
@@ -95,6 +104,9 @@
         min-height: 100vh;
         padding: 0;
         margin: 0 auto;
+        margin-right: -5.5rem;
+        left: -4rem;
+        position: relative;
         text-align: center;
         overflow: hidden;
       }
@@ -104,7 +116,7 @@
     .map-bg{fill:#222222;}
 	.route-path{fill:none;stroke:#444444;stroke-width:8;stroke-linejoin:round;stroke-miterlimit:10;}
 
-    
+
 
     .route-line {
       fill:none;

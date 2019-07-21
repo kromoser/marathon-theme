@@ -10,7 +10,7 @@
     transition: all .2s;
 
     .navbar-brand--name {
-      display: none;
+
       color: $highlight;
       font-weight: 700;
       font-size: 1.2rem;
@@ -100,4 +100,19 @@
 
   }
 
+}
+
+body.home {
+  .banner {
+    .navbar-brand {
+      .navbar-brand--name {
+        display: none;
+      }
+    }
+    &:hover {
+      .navbar-brand--name {
+        display: block;
+      }
+    }
+  }
 }
